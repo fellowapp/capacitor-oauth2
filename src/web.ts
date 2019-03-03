@@ -88,7 +88,7 @@ export class OAuth2ClientPluginWeb extends WebPlugin implements OAuth2ClientPlug
                                                 resolve(resp);
                                             } else {
                                                 if (options.awaitParam && urlParamObj[options.awaitParam]){
-                                                    resolve(resp)
+                                                    resolve(urlParamObj)
                                                 } else {                                                
                                                     // TODO PKCE
                                                 }
