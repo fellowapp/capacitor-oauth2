@@ -87,7 +87,11 @@ export class OAuth2ClientPluginWeb extends WebPlugin implements OAuth2ClientPlug
                                                 };
                                                 resolve(resp);
                                             } else {
-                                                // TODO PKCE
+                                                if (options.awaitParam && urlParamObj[options.awaitParam]){
+                                                    resolve(resp)
+                                                } else {                                                
+                                                    // TODO PKCE
+                                                }
                                             }
                                         } else {
                                             reject(new Error("No authorization code found!"));
