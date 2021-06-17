@@ -321,8 +321,9 @@ public class OAuth2ClientPlugin extends Plugin {
         }
 
         if (this.oauth2Options != null && this.oauth2Options.isHandleResultOnActivityResult()) {
-            result.getResultCode()
-            if (REQ_OAUTH_AUTHORIZATION == requestCode) {
+            // TODO: This is just so it compiles, once upstream updates we should use their code
+            int requestCode = result.getResultCode();
+            if (Activity.RESULT_OK == requestCode) {
                 PluginCall savedCall = getSavedCall();
                 if (savedCall == null) {
                     return;
